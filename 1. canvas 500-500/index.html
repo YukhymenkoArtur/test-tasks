@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas 500px*500px</title>
+</head>
+<body>
+  <canvas id='canvas' height='320' width='480' color='blue'>
+<script type= "text/javascript">
+    function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var a=1;
+    var b=1;
+    var isUnfold = true;
+    var ctx = canvas.getContext('2d');
+    ctx.strokeRect(10,10,500,500);
+    delay = 5,
+    i = 0,
+    startTimer = function(q){
+      var qw=500;
+      var tt=500;
+
+      if (a == 1 && b == 1){
+        isUnfold = true;
+      }else if (a == tt || b == tt){
+      	isUnfold = false;
+      }
+
+      if(isUnfold){
+        a++;
+        b++;
+      } else{
+        	a--;
+        	b--;
+      }
+    }
+    timer = setInterval(function (){
+      ctx.clearRect(0,0,520,520);
+      startTimer(ctx.fillRect(10,10,a,b));
+     },
+    delay)
+  }
+}
+
+</script>
+</body>
+</html>

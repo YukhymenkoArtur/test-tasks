@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Змейка-матрица</title>
+</head>
+<body>
+	<script type= "text/javascript">
+        function shake(rows, columns) {
+            var table = document.createElement("table"), x, cell, n = 1; // отсчет с числа 1
+
+            for ( x = 0; x < rows; x++) {
+                table.insertRow(-1); // добавляем строку в конец
+
+                while (table.rows[x].cells.length < columns) {
+                    cell = table.rows[x].insertCell( x % 2 ? 0 : -1) // вставляем ячейку или в конец в начало, в зависимости от того, чётная строка или нет
+                    cell.innerText = n++;
+                }
+
+            }
+
+            document.body.appendChild(table); // добавляем таблицу в документ
+        }
+
+        shake(4, 6) // запускаем функцию с прямоугольником 4 на 6
+</script>
+	
+</body>
+</html>
+
+

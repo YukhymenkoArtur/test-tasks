@@ -7,18 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Canvas 500px*500px</title>
 </head>
-<body>
-  <canvas id='canvas' height='320' width='480' color='blue'>
+<body onload="draw();">
+  <canvas id='canvas' height='500' width='500'>
 <script type= "text/javascript">
-    function draw() {
+function draw() {
   var canvas = document.getElementById('canvas');
   if (canvas.getContext) {
-    var a=1;
-    var b=1;
-    var isUnfold = true;
+  	var a = 1;
+  	var b = 1;
+  	var isUnfold = true;
     var ctx = canvas.getContext('2d');
-    ctx.strokeRect(10,10,500,500);
-    delay = 5,
+    delay = 25,
     i = 0,
     startTimer = function(q){
       var qw=500;
@@ -39,12 +38,13 @@
       }
     }
     timer = setInterval(function (){
-      ctx.clearRect(0,0,520,520);
-      startTimer(ctx.fillRect(10,10,a,b));
+      ctx.clearRect(0,0,500,500);
+      startTimer(ctx.fillRect(0,0,a,b));
      },
     delay)
   }
 }
+
 
 </script>
 </body>
